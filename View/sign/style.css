@@ -1,5 +1,5 @@
 body{
-    height :4000px;
+    
     width:1000px;
     background-color:#edeff4;
     }
@@ -13,10 +13,13 @@ body{
     z-index:7;
     
     }
+    .title{
+        margin:0;
+    }
     .header{
     width:100%;
     position:fixed;
-    height:100px;
+    height:90px;
     color:white;
     background-color:black;
     left:0;
