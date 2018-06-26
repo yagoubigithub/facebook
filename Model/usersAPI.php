@@ -1,7 +1,7 @@
 <?php
 
 // add user in database
-function facebookf_add_user($firstname, $lastname, $email, $password, $birthday, $sex, $isadmin = 0)
+function usersAPI_f__add_user($firstname, $lastname, $email, $password, $birthday, $sex, $isadmin = 0)
 {
     global $facebook_handle;
     if (empty($firstname) || empty($lastname) || empty($email) || empty($password)
@@ -39,6 +39,30 @@ function facebookf_add_user($firstname, $lastname, $email, $password, $birthday,
 
 
 }
+include('db.php');
+// get users information by his email if email invalid or empty return NULL
+function usersAPI_f_select_user_by_email($email)
+{
+    if (empty($email))
+        return null;
+    $n_email = mysqli_real_escape_string($facebook_handle, strip_tags($email));
+    if (!filter_var($n_email, FILTER_VALIDATE_EMAIL))
+        return null;
 
+    $query = sprintf("SELECT * FROM `users` WHERE `email` = '%s'", $n_email);
+    $query_result = mysqli_query($facebook_handle, $query);
+
+    if (!$query_result)
+        return null;
+
+    $user =NULL;
+    $user = mysqli_fetch_assoc($query_result);
+    echo $user['firstname'];
+
+    return $user;
+
+
+}
+usersAPI_f_select_user_by_email('yagoubi.aek.2@gmail.com');
 
 ?>
