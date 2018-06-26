@@ -39,10 +39,11 @@ function usersAPI_f__add_user($firstname, $lastname, $email, $password, $birthda
 
 
 }
-include('db.php');
+
 // get users information by his email if email invalid or empty return NULL
 function usersAPI_f_select_user_by_email($email)
 {
+    global $facebook_handle;
     if (empty($email))
         return null;
     $n_email = mysqli_real_escape_string($facebook_handle, strip_tags($email));
@@ -57,12 +58,12 @@ function usersAPI_f_select_user_by_email($email)
 
     $user =NULL;
     $user = mysqli_fetch_assoc($query_result);
-    echo $user['firstname'];
+    
 
     return $user;
 
 
 }
-usersAPI_f_select_user_by_email('yagoubi.aek.2@gmail.com');
+
 
 ?>
