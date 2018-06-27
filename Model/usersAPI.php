@@ -56,13 +56,28 @@ function usersAPI_f_select_user_by_email($email)
     if (!$query_result)
         return null;
 
-    $user =NULL;
+    $user = null;
     $user = mysqli_fetch_assoc($query_result);
-    
+
 
     return $user;
 
 
+}
+/*get users information by his email and password  if email or the password 
+invalid or empty or the password not belong in the email return NULL*/
+function usersAPI_f_select_user_by_email_and_password($email, $password)
+{
+    global $facebook_handle;
+    if (empty($email) || empty($password))
+        return null;
+    $user = usersAPI_f_select_user_by_email($email);
+
+    if ($user == null || $user['password'] != sha1($password)) {
+        return null;
+    }
+    echo json_encode($user);
+    return $user;
 }
 
 
