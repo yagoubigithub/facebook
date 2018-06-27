@@ -76,7 +76,6 @@ function usersAPI_f_select_user_by_email_and_password($email, $password)
     if ($user == null || $user['password'] != sha1($password)) {
         return null;
     }
-    echo json_encode($user);
     return $user;
 }
 
