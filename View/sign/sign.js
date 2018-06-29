@@ -7,6 +7,7 @@ $(document).ready(function () {
                 password: password
             },
             function (data) {
+                window.location="/../controller/login.php";
 
             })
     })
