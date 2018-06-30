@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Facebook</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="View/sign/style.css">
 </head>
 
 <body>
@@ -22,13 +22,13 @@
             <div id="form1" >
             Email or Phone
                 <br>
-                <input type="email"  id="email_login" placeholder="email" />
+                <input type="email" class="input_login"  id="email_login" placeholder="email" />
                 <br>
             </div>
     
             <div id="form2">Password
                 <br>
-                <input type="password"  id="password_login" placeholder="Mot de passe" />
+                <input type="password"  class="input_login"  id="password_login" placeholder="Mot de passe" />
                 <br>
                 <a href="https://www.facebook.com" target="_top"> Forgot account? </a>
             </div>
@@ -223,9 +223,8 @@
         </form>
 
     </div>
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/jquery.form.js"></script>
-    <script src="sign.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="View/sign/sign.js"></script>
 </body>
 
 </html>
