@@ -36,8 +36,8 @@
        
 
     </div>
-    <div class="b">
-    <div class="card">
+    <div class="jumbotron">
+    <div class="card card-forget-password" >
             <div class="card-header">
                 <h2>Find Your Account</h2>
             </div>

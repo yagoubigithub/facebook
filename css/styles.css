@@ -1,4 +1,7 @@
-
+*{
+    font-family: Helvetica, Arial, sans-serif;
+    
+}
 .card{
     background-color: #fff;
     box-shadow: 0 4px 8px 3px rgba(0,0,0,0.2);
@@ -21,4 +24,8 @@
 .card-footer{
     padding: 15px;
     background-color: #e2e2e2;
+}
+.jumbotron{
+    background-color: #e9ebee;
+padding: 50px;
 }
