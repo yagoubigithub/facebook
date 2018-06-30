@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forget my password</title>
+    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="forget_password.css">
 </head>
 <body>
@@ -30,8 +31,30 @@
             </div>
             <button type="button" id="submit_login">connexion</button>
         </form>
+
+        
        
 
     </div>
+    <div class="b">
+    <div class="card">
+            <div class="card-header">
+                <h2>Find Your Account</h2>
+            </div>
+            <div class="card-body">
+                <p>Please enter your email or phone number to search for your account.</p>
+                <input type="text" placeholder="Email or Phone">
+            </div>
+            <div class="card-footer">
+                <button type="button">Serach</button>
+                <button type="button">Cancel</button>
+            </div>
+
+
+        </div>
+    </div>
+    
+    <script src="../../js/jquery.js"></script>
+    <script src="./forget_password.js"></script>
 </body>
 </html>
