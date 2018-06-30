@@ -14,6 +14,22 @@ $(document).ready(function () {
                    
                }
 
-            })
-    })
+            });
+    });
+    $("#serch_email").click(function(){
+        var email = $("#input_serch_email").val();
+        $.get('../../controller/forget_password.php', {
+            email: email,
+        },
+        function (data) {
+           if(data === "null"){
+               
+           }else{
+               //email success
+               
+           }
+
+        });
+
+    });
 });
