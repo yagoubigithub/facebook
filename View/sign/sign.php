@@ -30,7 +30,7 @@
                 <br>
                 <input type="password"  class="input_login"  id="password_login" placeholder="Mot de passe" />
                 <br>
-                <a href="https://www.facebook.com" target="_top"> Forgot account? </a>
+                <a href="./View/forget_password/forget_password.php" target="_self"> Forgot account? </a>
             </div>
             <button type="button" id="submit_login">connexion</button>
         </form>
