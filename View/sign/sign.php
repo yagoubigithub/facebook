@@ -20,17 +20,17 @@
         </div>
         <form>
             <div id="form1" >
-                Adresse e-mail ou mobile
+            Email or Phone
                 <br>
                 <input type="email"  id="email_login" placeholder="email" />
                 <br>
-                <input type="checkbox" />Garder ma session active</div>
+            </div>
     
-            <div id="form2">Mot de passe
+            <div id="form2">Password
                 <br>
                 <input type="password"  id="password_login" placeholder="Mot de passe" />
                 <br>
-                <a href="https://www.facebook.com" target="_top"> Mot de passe oublié ? </a>
+                <a href="https://www.facebook.com" target="_top"> Forgot account? </a>
             </div>
             <button type="button" id="submit_login">connexion</button>
         </form>
