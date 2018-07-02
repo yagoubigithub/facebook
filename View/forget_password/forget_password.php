@@ -43,7 +43,7 @@
             </div>
             <div class="card-body">
                 <p>Please enter your email or phone number to search for your account.</p>
-                <input type="text" placeholder="Email or Phone" id="input_serch_email">
+                <input type="text" placeholder="Email or Phone" value="yagoubi.aek.2@gmail.com" id="input_serch_email">
             </div>
             <div class="card-footer">
                 <button type="button" id="serch_email">Serach</button>
