@@ -25,10 +25,34 @@ $(document).ready(function () {
            if(data === "null"){
                
            }else{
-               //email success
-               
+               //email success go to enter code
+               $(".jumbotron").html(
+                   '   <div class="card " >'+
+                   '<div class="card-header">'+
+                     '  <h2>Enter Security Code</h2>'+
+                  ' </div>'+
+                   '<div class="card-body">'+
+                       '<p>Please check your email for a message with your code. Your code is 6 numbers long.</p>'+
+                       '<input type="text" placeholder="Enter Code"  id="input_enter_code">'+
+                   '</div>'+
+                   '<div class="card-footer">'+
+                       '<button type="button" id="enter_code">Continue</button>'+
+                       '<button type="button">Cancel</button>'+
+                   '</div>'+
+       
+       
+               '</div>'
+               );
+               $("#serch_email").click(function(){
+                   var code = $("#input_enter_code").val();
+                   if(data   === code){
+                       //got to new password
+                   }
+               });
+
+
            }
-          $(".jumbotron").html(data);
+          
 
         });
 

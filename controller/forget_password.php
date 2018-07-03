@@ -4,9 +4,9 @@ require_once('../Model/usersAPI.php');
 if (isset($_GET['email'])) {
     $user = usersAPI_f_select_user_by_email($_GET['email']);
     if ($user != null) {
-        $to = $_GET['email'];
-        $subject = "Facebook";
         $code = rand(100000,999999);
+        /* $to = $_GET['email'];
+        $subject = "Facebook";
 
         $htmlContent = '<h1>Hello '.$user['firstname'].'</h1>,
 
@@ -25,17 +25,19 @@ if (isset($_GET['email'])) {
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         
         // Additional headers
-        $headers .= 'From: yagoubi<yagoubi.aek.2@gmail.com>' . "\r\n";
-        $headers .= 'Cc: yagoubi.aek.2@gmail.com' . "\r\n";
-        $headers .= 'Bcc: yagoubi.aek.2@gmail.com' . "\r\n";
+        $headers .= 'From: Facebook<facebook.com>' . "\r\n";
+        $headers .= 'Cc: facebook.com' . "\r\n";
+        $headers .= 'Bcc: facebook.com' . "\r\n";
 
         
         // Send email
         if (mail($to, $subject, $htmlContent, $headers)) :
-            echo 'Email has sent successfully.';
+            echo $code;
         else :
-           echo 'Email sending fail.';
+           echo 'null';
         endif;
+        */
+        echo $code;
     } else {
         echo "null";
     }
