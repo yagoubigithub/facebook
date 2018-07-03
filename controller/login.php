@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../Model/db.php');
 require_once('../Model/usersAPI.php');
 if (isset($_GET['email']) && isset($_GET['password'])) {

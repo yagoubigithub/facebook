@@ -11,6 +11,8 @@ $(document).ready(function () {
                    $(".input_login").css("border","4px solid rgba(255,0,0,0.5)");
                }else{
                    //login success
+                   alert(data);
+                   window.location="./index.php";
                }
 
             })
