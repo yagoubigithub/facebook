@@ -37,7 +37,7 @@ if (isset($_GET['email'])) {
            echo 'null';
         endif;
         */
-        echo $code;
+        echo 151515;
     } else {
         echo "null";
     }

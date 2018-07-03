@@ -43,10 +43,27 @@ $(document).ready(function () {
        
                '</div>'
                );
-               $("#serch_email").click(function(){
+               $("#enter_code").click(function(){
                    var code = $("#input_enter_code").val();
-                   if(data   === code){
+                   if(data   == code){
                        //got to new password
+                       $(".jumbotron").html(
+                        '   <div class="card " >'+
+                        '<div class="card-header">'+
+                          '  <h2>Choose a new password</h2>'+
+                       ' </div>'+
+                        '<div class="card-body">'+
+                            '<p>A strong password is a combination of letters and punctuation marks. It must be at least 6 characters long.</p>'+
+                            '<input type="text" placeholder="New Password"  id="input_new_password">'+
+                        '</div>'+
+                        '<div class="card-footer">'+
+                            '<button type="button" id="new_password">Continue</button>'+
+                            '<button type="button">Skip</button>'+
+                        '</div>'+
+            
+            
+                    '</div>'
+                    );
                    }
                });
 
