@@ -22,13 +22,13 @@
             <div id="form1" >
             Email or Phone
                 <br>
-                <input type="email" class="input_login"  id="email_login" placeholder="email" />
+                <input type="email" class="input_login" value="yagoubi.aek.2@gmail.com"  id="email_login" placeholder="email" />
                 <br>
             </div>
     
             <div id="form2">Password
                 <br>
-                <input type="password"  class="input_login"  id="password_login" placeholder="Mot de passe" />
+                <input type="password"  class="input_login" value="yagoubi10" id="password_login" placeholder="Mot de passe" />
                 <br>
                 <a href="./View/forget_password/forget_password.php" target="_self"> Forgot account? </a>
             </div>

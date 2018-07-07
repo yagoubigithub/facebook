@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,42 +10,65 @@
     <link rel="stylesheet" href="./View/home/home.css">
     <title>Facebook</title>
 </head>
+
 <body>
     <div class="header">
-       
-       <a href="./index.php"><i class="fab fa-facebook-square fa-lg"></i></a>
-       
-       <input type="search">
-       <button type="button">serch</button>
-       <a href="#">
-           <!--profile-->
-           <img src="../../images/" alt="profile">
-       </a>
-       <a href="./index.php">
-        <!--home-->
-        Home
-    </a>
-    <a href="#">
-        <!--Find Friends-->
-        Find Friends
-    </a>
-    <a href="#">
-        <!--Friend Requests-->
-        <i class="fas fa-user-friends fa-lg"></i>
-    </a>
-    <a href="#">
-        <i class="fab fa-facebook-messenger fa-lg"></i>7
-    </a>
-   
-    <a href="#">
-        <i class="fas fa-globe-americas fa-lg"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-question-circle fa-lg"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-caret-down fa-lg"></i>
-    </a>
+        <div class="flex-container">
+            <div class="flex-item" style="margin-right: 10%">
+                <a href="./index.php" class="logo">
+                    <i class="fab fa-facebook-square fa-lg"></i>
+                </a>
+
+                <input type="search" class="serch" placeholder="Serch">
+                <button type="button" class="btn-serch">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="flex-item">
+                <a href="#" class="btn-nav text-white">
+                    <!--profile-->
+                    <img src="./images/yagoubi_profile.jpg" class="img-nav-profile" width="24" height="24" alt="profile">
+                    <?php  echo ucwords($_SESSION['firstname']) ?>
+                </a>
+                <a href="./index.php" class="btn-nav text-white">
+                    <!--home-->
+                    Home
+                </a>
+                <a href="#" class="btn-nav text-white">
+                    <!--Find Friends-->
+                    Find Friends
+                </a>
+            </div>
+            <div class="flex-item">
+
+                <a href="#" class="btn-nav text-gray">
+                    <!--Friend Requests-->
+                    <i class="fas fa-user-friends fa-lg"></i>
+                    <sup>7</sup>
+                </a>
+                <a href="#" class="btn-nav text-gray">
+                    <i class="fab fa-facebook-messenger fa-lg"></i><sup>7</sup>
+                </a>
+
+                <a href="#" class="btn-nav text-gray">
+                    <i class="far fa-bell fa-lg"></i>
+                    <sup>7</sup>
+                </a>
+            </div>
+            <div class="flex-item">
+                <a href="#" class="btn-nav text-gray">
+                    <i class="fas fa-question-circle fa-lg"></i>
+                    <sup></sup>
+                </a>
+                <a href="#" class="btn-nav text-gray">
+                    <i class="fas fa-caret-down fa-lg"></i>
+                    <sup></sup>
+                </a>
+            </div>
+
+        </div>
+
     </div>
 </body>
+
 </html>
