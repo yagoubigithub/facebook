@@ -32,7 +32,7 @@ input.serch{
     padding-left: 5px;
 }
 .flex-item{
-overflow: hidden;
+
 margin-left: 15px;
 
 }
@@ -64,6 +64,7 @@ border:1px solid rgba(0,0,0,0.4);
 overflow: hidden;
 }
 .btn-nav{
+    position: relative;
     font-size: 12px;
     -webkit-font-smoothing: antialiased;
     font-weight: bold;
@@ -75,12 +76,22 @@ overflow: hidden;
     vertical-align: top;
 }
 .btn-nav:hover{
-    background-color: #333;
-    
+    background-color: #100909; 
+    color :#4b4f56;  
 }
 .text-white{
     color:white;
 }
 .text-gray{
     color :#4b4f56;
+}
+.collapse{
+display: block;  
+position:absolute;
+background-color:transparent;
+width:200px;
+top:30px;
+right: 0;
+display: none;
+
 }
