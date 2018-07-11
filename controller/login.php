@@ -12,6 +12,7 @@ if (isset($_GET['email']) && isset($_GET['password'])) {
         $_SESSION['email'] = $user['email'];
         $_SESSION['sex'] = $user['sex'];
         $_SESSION['birthday'] = $user['birthday'];
+        $_SESSION['image_profile'] = $user['url'];
         $_SESSION['isadmin'] = $user['isadmin'];
 
         //set email cookie
