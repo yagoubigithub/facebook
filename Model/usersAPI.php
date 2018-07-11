@@ -86,11 +86,14 @@ function usersAPI_f_select_friends_by_user_id($uid)
 {
     global $facebook_handle;
     $id = (int)$uid;
-    $query = sprintf("SELECT u.id,u.firstname 
+    $query = sprintf("SELECT u.id,i.url,u.firstname 
     FROM `users` u 
     JOIN `friends` f
     ON f.id_friend = u.id
-    WHERE f.id_user = %d", $id);
+    JOIN `images` i
+    ON i.id_user = f.id_friend
+    WHERE f.id_user = %d
+    LIMIT 10", $id);
     $query_result = mysqli_query($facebook_handle, $query);
 
     if (!$query_result)
