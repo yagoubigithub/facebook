@@ -149,3 +149,12 @@ display: none;
 .contact:hover{
     background-color: darkgrey;
 }
+.online{
+    background: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    margin-right: 10px;
+    
+}
