@@ -80,4 +80,29 @@ function usersAPI_f_select_user_by_email_and_password($email, $password)
 }
 
 
+
+
+function usersAPI_f_select_friends_by_user_id($uid)
+{
+    global $facebook_handle;
+    $id = (int)$uid;
+    $query = sprintf("SELECT u.id,u.firstname 
+    FROM `users` u 
+    JOIN `friends` f
+    ON f.id_friend = u.id
+    WHERE f.id_user = %d", $id);
+    $query_result = mysqli_query($facebook_handle, $query);
+
+    if (!$query_result)
+        return null;
+    if($query_result->num_rows > 0 ){
+        $friends = mysqli_fetch_assoc($query_result);
+        
+        
+        return $friends;
+    }
+    return null;
+    
+
+}
 ?>
