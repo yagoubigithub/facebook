@@ -1,10 +1,13 @@
 <?php
-session_start();
-if (isset($_SESSION['id']) && isset($_SESSION['firstname'])
-    && isset($_SESSION['lastname']) && isset($_SESSION['email'])) {
+require_once('../Model/db.php');
+require_once('../Model/usersAPI.php');
+
+
+if (isset($_GET['id'])) {
+    $uid = $_GET['id'];
 
     echo '{';
-    echo "\"id\" : " . $_SESSION['id'] . ",";
+    echo "\"id\" : " .$uid . ",";
     echo "\"firstname\" : \"" . $_SESSION['firstname'] . "\",";
     echo "\"image_profile\" : \"" . $_SESSION['image_profile'] . "\",";
     echo "\"lastname\" : \"" . $_SESSION['lastname'] . "\"";

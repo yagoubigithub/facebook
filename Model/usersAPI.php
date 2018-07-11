@@ -108,8 +108,28 @@ function usersAPI_f_select_friends_by_user_id($uid)
         
         return $friends;
     }
-    return null;
-    
-
+    return null;   
 }
+
+function usersAPI_f_select_user_by_id($uid){
+    global $facebook_handle;
+    $id = (int)$uid;
+    $query = sprintf("SELECT u.id,i.url,u.firstname 
+    FROM `users` u 
+    JOIN `images` i
+    ON i.id_user = u.id
+    WHERE f.id_user = %d", $id);
+    $query_result = mysqli_query($facebook_handle, $query);
+
+    if (!$query_result)
+        return null;
+    if($query_result->num_rows > 0 ){
+        $user = mysqli_fetch_assoc($query_result);
+        
+        
+        return $user;
+    }
+    return null;
+}
+
 ?>
