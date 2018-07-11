@@ -1,11 +1,16 @@
 body {
     margin: 0;
-    
+  overflow-x: hidden;
     height: 3000px;
 }
 
 
-
+.jumbotron{
+    padding: 50px;
+    background-color: #f2f2f2;
+    width:100%;
+    display: block;
+}
 .header {
     position: fixed;
     width: 100%;
@@ -94,4 +99,53 @@ top:30px;
 right: 0;
 display: none;
 
+}
+.fixed{
+    position: fixed;
+    top:43px;
+    width:300px;
+ 
+}
+.fixed-1{
+    left:0;
+    
+}
+.fixed-2{
+    right: 0;
+}
+.main-content{
+    width:500px;
+}
+.contact{
+    text-decoration: none;
+    color:#100909;
+    width:100%;
+    
+    display: flex;
+    flex-direction: row;
+    transition: 0.9s;
+    align-items: center;
+
+}
+.avatar{
+    border-radius: 50%;
+   
+}
+.name-friend{
+    white-space: nowrap; 
+    flex-grow: 6;
+   
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-right:25px;
+    margin-left: 10px;
+    
+}
+.time{
+    color:#4b4f56;
+    font-size: 60%;
+    margin-right: 10px;
+}
+.contact:hover{
+    background-color: darkgrey;
 }
