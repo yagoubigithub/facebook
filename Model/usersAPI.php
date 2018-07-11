@@ -50,7 +50,11 @@ function usersAPI_f_select_user_by_email($email)
     if (!filter_var($n_email, FILTER_VALIDATE_EMAIL))
         return null;
 
-    $query = sprintf("SELECT * FROM `users` WHERE `email` = '%s'", $n_email);
+    $query = sprintf("SELECT * 
+    FROM `users` u
+    JOIN `images` i
+    ON u.id = i.id_user AND i.isprofile = 1
+     WHERE `email` = '%s'", $n_email);
     $query_result = mysqli_query($facebook_handle, $query);
 
     if (!$query_result)
