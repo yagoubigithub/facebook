@@ -1,4 +1,31 @@
 $(document).ready(function () {
+    var uid=0;
+    $.get('./controller/select_id.php',
+    function (data) {
+       if(data === "null"){
+           
+       }else{
+          uid = Number(data);   
+          $.get('./controller/select_friends.php',{
+              uid:uid
+          },
+          function (data) {
+           var friends=JSON.parse(data);
+           alert(friends);
+           for(i=0;i<friends.length;i++) {
+               $('#fixed_2').append(' <!--CONTACTS Item-->'+
+               '<a href="#" class="contact">'+
+                   '<img src="./images/'+friends[i].url+
+                   '" alt="'+friends[i].firstname+'"'+
+                    'class="avatar" width="33" height="33" >'+
+                   '<div class="name-friend">'+friends[i].firstname+' '+friends[i].lastname+'</div>'+
+                   '<span class="time">11m</span>'+
+              '</a>');
+           }
+          });
+       }
+
+    });
     $('#btn_nav_friend_requests').click(function () {
         $('#collapse_friend_requests').toggle(100);
         $('#collapse_messenger').hide();

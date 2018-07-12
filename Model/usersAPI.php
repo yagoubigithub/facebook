@@ -90,7 +90,7 @@ function usersAPI_f_select_friends_by_user_id($uid)
 {
     global $facebook_handle;
     $id = (int)$uid;
-    $query = sprintf("SELECT u.id,i.url,u.firstname 
+    $query = sprintf("SELECT u.id,i.url,u.firstname,u.lastname
     FROM `users` u 
     JOIN `friends` f
     ON f.id_friend = u.id
@@ -102,12 +102,16 @@ function usersAPI_f_select_friends_by_user_id($uid)
 
     if (!$query_result)
         return null;
+    $friends = array();
     if($query_result->num_rows > 0 ){
-        $friends = mysqli_fetch_assoc($query_result);
-        
-        
+        while($row = $query_result->fetch_assoc()) {
+            array_push($friends,$row);
+        }
+       
+        mysqli_free_result($query_result);
         return $friends;
     }
+    
     return null;   
 }
 
