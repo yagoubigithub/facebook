@@ -112,6 +112,7 @@ display: none;
 }
 .fixed-2{
     right: 0;
+    background-color: aqua;
 }
 .main-content{
     width:500px;
