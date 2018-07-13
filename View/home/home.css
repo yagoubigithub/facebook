@@ -103,7 +103,7 @@ display: none;
 .fixed{
     position: fixed;
     top:43px;
-    width:300px;
+    width:205px;
  
 }
 .fixed-1{
@@ -112,7 +112,8 @@ display: none;
 }
 .fixed-2{
     right: 0;
-    background-color: aqua;
+    background-color:#f2f2f2;
+    padding: 5px;
 }
 .main-content{
     width:500px;
@@ -121,7 +122,7 @@ display: none;
     text-decoration: none;
     color:#100909;
     width:100%;
-    
+    padding: 4px;
     display: flex;
     flex-direction: row;
     transition: 0.9s;
@@ -148,14 +149,17 @@ display: none;
     margin-right: 10px;
 }
 .contact:hover{
-    background-color: darkgrey;
+    background-color: #e2e2e2;
 }
 .online{
-    background: green;
-    width: 10px;
-    height: 10px;
+    background: rgb(66, 183, 42);
+    width: 6px;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 9px;
     border-radius: 50%;
     display: block;
-    margin-right: 10px;
+    margin-right: 12px;
+    border: 0;
     
 }

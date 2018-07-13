@@ -13,7 +13,6 @@ $(document).ready(function () {
            var friends=JSON.parse(data);
            var height=$('body').height() - 43;
            $('#fixed_2').css('height',height);
-           alert(friends);
            for(i=0;i<friends.length;i++) {
                $('#fixed_2').append(' <!--CONTACTS Item-->'+
                '<a href="#" class="contact">'+
