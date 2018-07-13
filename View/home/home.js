@@ -20,7 +20,9 @@ $(document).ready(function () {
                    '" alt="'+friends[i].firstname+'"'+
                     'class="avatar" width="33" height="33" >'+
                    '<div class="name-friend">'+friends[i].firstname+' '+friends[i].lastname+'</div>'+
-                   '<span class="time">11m</span>'+
+                   ' <div class="is_online_mark">'+
+                   '<span class="online"></span>'+
+               '</div>'+
               '</a>');
            }
           });
