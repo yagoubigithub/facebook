@@ -227,8 +227,8 @@ input.serch {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    max-height: 500px;
     margin-bottom: 15px;
+    box-sizing: border-box;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -290,4 +290,12 @@ input.serch {
 
 .publication-time-and-share-style-container span:hover {
     color: #000;
+}
+.publication-content{
+box-sizing: border-box;
+max-width: 100%;
+border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+.publication-content img{
+    max-width: 100%;
 }
