@@ -131,7 +131,7 @@ input.serch {
     width: 500px;
     position: absolute;
     left: 220px;
-    top: 34px;
+    top: 50px;
 }
 
 .contact {
@@ -150,7 +150,7 @@ input.serch {
 
 .avatar {
     border-radius: 50%;
-    flex-grow: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .name-friend {
@@ -224,10 +224,70 @@ input.serch {
 }
 
 .publication-container {
-    flex-direction:column;
-    background-color: #fff;
     display: flex;
+    flex-direction: column;
+    background-color: #fff;
     max-height: 500px;
     margin-bottom: 15px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); 
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.publication-header {
+    height: 50px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.publication-name-user-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+.publication-name-user {
+    font-weight: bolder;
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.publication-header-collapse-btn {
+    display: flex;
+    width: 50px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.publication-header-collapse-btn a{
+    color:#555;
+    font-size: 16px;
+}
+
+
+
+.publication-time-and-share-style-container a {
+    text-decoration: none;
+    color: #999;
+}
+
+.publication-time-and-share-style-container a:hover {
+    color: #000;
+}
+
+.publication-time-and-share-style-container span {
+    cursor: pointer;
+    color: #999;
+    margin-right: 3px;
+}
+
+.publication-time-and-share-style-container span:hover {
+    color: #000;
 }
