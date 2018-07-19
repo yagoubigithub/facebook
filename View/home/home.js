@@ -65,5 +65,27 @@ $(document).ready(function () {
         $('#collapse_messenger').hide();
         $('#collapse_notifications').hide();
     });
+    $('#chat_header_1').click(function(){
+
+        $('#chat_body_1').toggle();
+        $('#chat_footer_1').toggle();    
+    });
+    $('#chat_header_2').click(function(){
+
+        $('#chat_body_2').toggle();
+        $('#chat_footer_2').toggle();    
+    });
    
 });
+
+
+
+/***************Function********************************** */
+function hideChatContainer(elemnt){
+    elemnt.parentElement.parentElement.style.display='none';
+}
+function toggleChatbodyAndChatFooter(elemnt){
+  
+   elemnt.parentElement.getElementsByTagName('div')[1].style.display='none';
+   elemnt.parentElement.getElementsByTagName('div')[2].style.display='none';
+}
