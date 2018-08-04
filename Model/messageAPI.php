@@ -43,17 +43,24 @@ function messageAPI_select_all_messages($sender_id,$receiver_id){
 
         
     
-        $query = sprintf("SELECT *  FROM `message` WHERE sender_id = %d AND receiver_id = %d", $n_sender_id,$n_receiver_id);
+        $query = sprintf("SELECT *  FROM `message` WHERE (sender_id = %d AND receiver_id = %d ) OR
+        (sender_id = %d AND receiver_id = %d)", $n_sender_id,$n_receiver_id,$n_receiver_id,$n_sender_id);
+        error_log($query);
         $query_result = mysqli_query($facebook_handle, $query);
     
         if (!$query_result)
             return null;
     
-        $message = null;
-        $message = mysqli_fetch_assoc($query_result);
-    
-    
-        return $message;
+        $messages = array();
+        
+        if($query_result->num_rows > 0 ){
+            while($row = $query_result->fetch_assoc()) {
+                array_push($messages,$row);
+            }
+           
+            mysqli_free_result($query_result);
+            return $messages;
+        }
     
     }catch(Exepetion $ex){
         error_log($ex->getMessage());
