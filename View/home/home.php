@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/fontawesome-free-5.0.12/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./View/home/home.css">
+    <link rel="stylesheet" href="./View/friends-panel/friends-panel.css">
+    <link rel="stylesheet" href="./View/post/post.css">
+    <title>Facebook</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="flex-container">
+            <div class="flex-item" style="margin-right: 10%">
+                <a href="./index.php" class="logo">
+                    <i class="fab fa-facebook-square fa-lg"></i>
+                </a>
+
+                <input type="search" class="serch" placeholder="Serch">
+                <button type="button" class="btn-serch">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="flex-item">
+                <a href="#" class="btn-nav text-white" id="btn_profile">
+                    <!--profile-->
+                    <img src="./images/yagoubi_profile.jpg" class="img-nav-profile" width="24" height="24" alt="profile">
+                    <?php echo ucfirst($_SESSION['firstname']) ?>
+                </a>
+                <a href="./index.php" class="btn-nav text-white">
+                    <!--home-->
+                    Home
+                </a>
+                <a href="#" class="btn-nav text-white">
+                    <!--Find Friends-->
+                    Find Friends
+                </a>
+            </div>
+            <div class="flex-item">
+
+                <a href="#" class="btn-nav text-gray" id="btn_nav_friend_requests">
+                    <!--Friend Requests-->
+                    <i class="fas fa-user-friends fa-lg"></i>
+                    <sup>7</sup>
+                    <div class="collapse" id="collapse_friend_requests">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="btn-nav text-gray" id="btn_nav_messenger">
+                    <i class="fab fa-facebook-messenger fa-lg"></i>
+                    <sup>7</sup>
+                    <div class="collapse" id="collapse_messenger">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="btn-nav text-gray" id="btn_nav_notifications">
+                    <i class="far fa-bell fa-lg"></i>
+                    <sup>7</sup>
+                    <div class="collapse" id="collapse_notifications">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex-item">
+                <a href="#" class="btn-nav text-gray" id="btn_nav_quick_help">
+                    <i class="fas fa-question-circle fa-lg"></i>
+                    <sup></sup>
+                    <div class="collapse" id="collapse_quick_help">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+              <a href="#" class="btn-nav text-gray" id="btn_nav_log_out_card">
+                    <i class="fas fa-caret-down fa-lg"></i>
+                    <sup></sup>
+                    <div class="collapse" id="collapse_log_out_card">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                                <h1>hello collapse</h1>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="jumbotron">
+        <div class="fixed fixed-1" id="fixed_1">
+            <div class="card">
+                <h1>hello</h1>
+            </div>
+
+        </div>
+        <div class="main-content">
+                  <!--posts-->
+                  <?php include_once('View/post/post.php')?>    
+        </div>
+       <?php include_once('View/friends-panel/friends-panel.php')?>
+        <div class="fixed-3 fixed" >
+            <a href="#" class="serch_friends_font">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="input_serch_friends_container">
+                <input type="search" placeholder="Serch.." class="input_serch_friends" >
+            </div>
+            
+            <a href="#" class="serch_friends_font">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="serch_friends_font">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="serch_friends_font">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+    <div class="fixed  fixed-4">
+      <!--  <div class="chat-container"  id="chat_container_1">
+            <div class="chat-header" id="chat_header_1">
+                <a href="#" class="chat-name-friend">Friend 1 </a>
+               <a href="#" onclick="hideChatContainer(this)"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="chat-body"  id="chat_body_1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ipsum perferendis!</p>
+            </div>
+            <div class="chat-footer" id="chat_footer_1">
+                <textarea  cols="30" rows="2"></textarea>
+            </div>
+
+        </div>
+
+        <div class="chat-container"  id="chat_container_2">
+            <div class="chat-header" id="chat_header_2">
+                <a href="#">Friend 2 </a>
+               <a href="#" onclick="hideChatContainer(this)"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="chat-body"  id="chat_body_2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ipsum perferendis!</p>
+            </div>
+            <div class="chat-footer" id="chat_footer_2">
+                <textarea  cols="30" rows="2"></textarea>
+            </div>
+
+        </div>
+    -->
+    </div>
+        
+
+    
+    <script src="./js/jquery.js"></script>
+    <script src="./View/home/home.js"></script>
+    <script src="View/friends-panel/friends-panel.js"></script>            
+</body>
+
+</html>

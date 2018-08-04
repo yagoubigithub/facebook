@@ -33,3 +33,7 @@ h1,h2,h3,h4,h5,h6{
     background-color: #e9ebee;
 padding: 50px;
 }
+.avatar {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}

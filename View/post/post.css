@@ -1,0 +1,106 @@
+.publication-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.publication-header {
+    height: 50px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.publication-name-user-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+.publication-name-user {
+    font-weight: bolder;
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.publication-header-collapse-btn {
+    display: flex;
+    width: 50px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.publication-header-collapse-btn a{
+    color:#555;
+    font-size: 16px;
+}
+
+
+
+.publication-time-and-share-style-container a {
+    text-decoration: none;
+    color: #999;
+}
+
+.publication-time-and-share-style-container a:hover {
+    color: #000;
+}
+
+.publication-time-and-share-style-container span {
+    cursor: pointer;
+    color: #999;
+    margin-right: 3px;
+}
+
+.publication-time-and-share-style-container span:hover {
+    color: #000;
+}
+.publication-content{
+box-sizing: border-box;
+max-width: 100%;
+border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+.publication-content img{
+    max-width: 100%;
+}
+.like-comment-share-container{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5px;
+    box-sizing: border-box;
+    
+    
+}
+.like-comment-share-container .btn{
+    border:0;
+    outline: 0;
+    background: transparent;
+    padding:7px 15px;
+    width:180px;
+    transition: 0.8s;
+    color:#999;
+    font-size: 22px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+}
+.like-comment-share-container .btn:hover{
+    background: #f2f2f2;
+}
+.like-comment-share-container .btn span{
+    font-size: 14px;
+    margin-left:5px;
+}
