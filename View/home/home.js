@@ -1,4 +1,4 @@
-var count_chat_box = 0;
+var chatbox_count = 0;
 $(document).ready(function () {
     
   
@@ -55,7 +55,7 @@ $(document).ready(function () {
 /***************Function********************************** */
 function hideChatContainer(elemnt) {
     elemnt.parentElement.parentElement.style.display = 'none';
-    count_chat_box--;
+    chatbox_count--;
 }
 
 function toggleChatbodyAndChatFooter(elemnt) {

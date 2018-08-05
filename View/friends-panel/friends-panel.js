@@ -30,9 +30,11 @@ $(document).ready(function(){
                                     '</a>');
                             }
                             
+                            
                             $(".contact").click(function () {
                                                  
-                                $('.fixed-4').append(' <div class="chat-container"  id="chat_container_1">'+
+                            if(chatbox_count != 3){
+                                 $('.fixed-4').append(' <div class="chat-container"  id="chat_container_1">'+
                                ' <div class="chat-header" id="chat_header_1">'+
                                     '<a href="#" class="chat-name-friend">'+$(this).children('.name-friend').html()+' </a>'+
                                    '<a href="#" onclick="hideChatContainer(this)"><i class="fas fa-times"></i></a>'+
@@ -46,6 +48,8 @@ $(document).ready(function(){
                                 '</div>'+
                             
                             '</div>');
+                            chatbox_count++;
+                            }
                                
                             });
                         
