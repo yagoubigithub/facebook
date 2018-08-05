@@ -23,28 +23,34 @@ $(document).ready(function(){
                                     'class="avatar" width="33" height="33" >' +
                                     '<div class="name-friend">' + friends[i].firstname + ' ' + friends[i].lastname + '</div>' +
                                     ' <div class="is_online_mark">' +
+                                    
                                     '<span class="online"></span>' +
                                     '</div>' +
+                                    ' <input type="hidden" value="'+friends[i].id+'">' +
                                     '</a>');
                             }
+                            
+                            $(".contact").click(function () {
+                                                 
+                                $('.fixed-4').append(' <div class="chat-container"  id="chat_container_1">'+
+                               ' <div class="chat-header" id="chat_header_1">'+
+                                    '<a href="#" class="chat-name-friend">'+$(this).children('.name-friend').html()+' </a>'+
+                                   '<a href="#" onclick="hideChatContainer(this)"><i class="fas fa-times"></i></a>'+
+                                '</div>'+
+                                '<div class="chat-body"  id="chat_body_1">'+
+                                    '<p>2it. Atque, ipsum perferendis!</p>'+
+                                '</div>'+
+                                '<div class="chat-footer" id="chat_footer_1">'+
+                                    '<textarea  cols="30" rows="2"></textarea>'+
+                                    ' <input type="hidden" value="'+$(this).children('input').val()+'">' +
+                                '</div>'+
+                            
+                            '</div>');
+                               
+                            });
                         
 
-                        $(".contact").click(function () {
-                            $('.fixed-4').append(' <div class="chat-container"  id="chat_container_1">'+
-                           ' <div class="chat-header" id="chat_header_1">'+
-                                '<a href="#" class="chat-name-friend">'+$(this).children('.name-friend').html()+' </a>'+
-                               '<a href="#" onclick="hideChatContainer(this)"><i class="fas fa-times"></i></a>'+
-                            '</div>'+
-                            '<div class="chat-body"  id="chat_body_1">'+
-                                '<p>2it. Atque, ipsum perferendis!</p>'+
-                            '</div>'+
-                            '<div class="chat-footer" id="chat_footer_1">'+
-                                '<textarea  cols="30" rows="2"></textarea>'+
-                            '</div>'+
-                
-                        '</div>');
-                           
-                        });
+                       
 
                     });
             }
