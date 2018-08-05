@@ -26,7 +26,8 @@ $(document).ready(function(){
                                     
                                     '<span class="online"></span>' +
                                     '</div>' +
-                                    ' <input type="hidden" value="'+friends[i].id+'">' +
+                                    ' <input type="hidden" class="id" value="'+friends[i].id+'">' +
+                                    ' <input type="hidden"class="textarea_id"  value="'+friends[i].textarea_id+'">' +
                                     '</a>');
                             }
                             
@@ -43,8 +44,8 @@ $(document).ready(function(){
                                     '<p>2it. Atque, ipsum perferendis!</p>'+
                                 '</div>'+
                                 '<div class="chat-footer" id="chat_footer_1">'+
-                                    '<textarea  cols="30" rows="2"></textarea>'+
-                                    ' <input type="hidden" value="'+$(this).children('input').val()+'">' +
+                                    '<textarea  cols="30" rows="2" id="'+$(this).children('.textarea_id').val()+'"></textarea>'+
+                                    ' <input type="hidden" value="'+$(this).children('.id').val()+'">' +
                                 '</div>'+
                             
                             '</div>');

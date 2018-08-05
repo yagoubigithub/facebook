@@ -90,7 +90,8 @@ function usersAPI_f_select_friends_by_user_id($uid)
 {
     global $facebook_handle;
     $id = (int)$uid;
-    $query = sprintf("SELECT u.id,i.url,u.firstname,u.lastname
+    $query = sprintf("SELECT u.id,i.url,u.firstname,u.lastname,CONCAT(FLOOR(RAND() *
+     (SELECT COUNT(*)  FROM `friends`)),'_textarea_',u.id) AS textarea_id
     FROM `users` u 
     JOIN `friends` f
     ON f.id_friend = u.id
