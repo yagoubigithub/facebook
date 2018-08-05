@@ -1,4 +1,5 @@
 var chatbox_count = 0;
+var  chatbox_id_array = ["",""];
 $(document).ready(function () {
     
   
@@ -53,9 +54,11 @@ $(document).ready(function () {
 
 
 /***************Function********************************** */
-function hideChatContainer(elemnt) {
+function hideChatContainer(elemnt,chatbox_id) {
     elemnt.parentElement.parentElement.style.display = 'none';
     chatbox_count--;
+    delete chatbox_id_array[chatbox_id_array.indexOf(chatbox_id)];
+
 }
 
 function toggleChatbodyAndChatFooter(elemnt) {
