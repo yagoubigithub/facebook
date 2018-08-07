@@ -53,7 +53,7 @@ $(document).ready(function () {
                                 var textarea_id=$(this).children('.chatbox_id').val() + "_textarea";
                                 var receiver_id = $(this).children('.id').val();
                                 var sender_id = uid;
-                                var obj={textarea_id:textarea_id,receiver_id:receiver_id,sender_id:sender_id};
+
                                 chatbox_id_array[chatbox_count] = $(this).children('.chatbox_id').val();
                                 $("#" + textarea_id).keypress(function (e) {
                                     //send message
