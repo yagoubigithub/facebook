@@ -61,13 +61,28 @@ $(document).ready(function () {
 
                                     var code = e.keyCode || e.which;
                                     if(code == 13) { //Enter keycode
-                                        sendMessage($(this).val(),sender_id,receiver_id);
+                                        $(this).sendMessage($(this).val(),sender_id,receiver_id);
                                       
                                     }
                                 });
                             }
 
                         });
+                        (function( $ ){
+                            $.fn.sendMessage = function(mesg,sender_id,receiver_id) {
+                                $.post('./controller/insert_Message.php', {
+                                    mesg:mesg,
+                                    sender_id:sender_id,
+                                    receiver_id:receiver_id
+                                },
+                                function (data) {
+                                 
+                    
+                                });
+
+                               return this;
+                            }; 
+                         })( jQuery );
 
 
 
