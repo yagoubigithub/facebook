@@ -41,7 +41,6 @@ $(document).ready(function () {
                                     '<a href="#" onclick="hideChatContainer(this,\'' + $(this).children('.chatbox_id').val() + '\')"><i class="fas fa-times"></i></a>' +
                                     '</div>' +
                                     '<div class="chat-body"  id="chat_body_' + $(this).children('.chatbox_id').val() + '">' +
-                                    '<p>loding ..</p>' +
                                     '</div>' +
                                     '<div class="chat-footer" id="chat_footer_' + $(this).children('.chatbox_id').val() + '">' +
                                     '<textarea  cols="30"  rows="2" id="' + $(this).children('.chatbox_id').val() + '_textarea">'+
@@ -80,9 +79,9 @@ $(document).ready(function () {
                                      var message = JSON.parse(data);
                                      for(var i = 0;i<message.length;i++){
                                          if(message[i].sender_id == sender_id){
-                                            textarea_id.parent().parent().children(".chat-body").append("<br>"+message[i].mesg);
+                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_left'><span class='message_left'>"+message[i].mesg+"</span></div>");
                                          }else{
-                                            textarea_id.parent().parent().children(".chat-body").append("<br><span dir='rtl'>"+message[i].mesg+"</span>");
+                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_right'><span class='message_right'>"+message[i].mesg+"</span></div>");
                                          }
                                         
                                      }

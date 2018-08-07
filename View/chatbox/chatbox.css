@@ -34,12 +34,43 @@
 }
 .chat-body{
     height: 200px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-y: auto;
 }
 .chat-footer{
     background-color: #999;
     height: 75px;
 }
-
+.message_container{
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+}
+.m_left{
+    justify-content: flex-start;
+}
+.m_right{
+    justify-content: flex-end;
+}
+.message_left{
+    color:white;
+    background: royalblue;
+    border-radius: 5px;
+    padding: 5px;
+   max-width: 150px;
+   box-sizing: border-box;
+   
+}
+.message_right{
+    color:white;
+    background: rosybrown;
+    border-radius: 5px;
+    padding: 5px;
+    padding: 5px;
+   max-width: 150px;
+   box-sizing: border-box;
+}
 
 
 
