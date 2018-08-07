@@ -61,22 +61,32 @@ $(document).ready(function () {
 
                                     var code = e.keyCode || e.which;
                                     if(code == 13) { //Enter keycode
-                                        $(this).sendMessage($(this).val(),sender_id,receiver_id);
-                                      
+                                        $(this).sendMessage($(this),$(this).val(),sender_id,receiver_id);
+                                        $(this).val("");
                                     }
                                 });
                             }
 
                         });
                         (function( $ ){
-                            $.fn.sendMessage = function(mesg,sender_id,receiver_id) {
+                            $.fn.sendMessage = function(textarea_id,mesg,sender_id,receiver_id) {
                                 $.post('./controller/insert_Message.php', {
                                     mesg:mesg,
                                     sender_id:sender_id,
                                     receiver_id:receiver_id
                                 },
                                 function (data) {
-                                 
+                                 if(data != 'null'){
+                                     var message = JSON.parse(data);
+                                     for(var i = 0;i<message.length;i++){
+                                         if(message[i].sender_id == sender_id){
+                                            textarea_id.parent().parent().children(".chat-body").append("<br>"+message[i].mesg);
+                                         }else{
+                                            textarea_id.parent().parent().children(".chat-body").append("<br><span dir='rtl'>"+message[i].mesg+"</span>");
+                                         }
+                                        
+                                     }
+                                 }
                     
                                 });
 
