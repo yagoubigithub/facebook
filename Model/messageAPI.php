@@ -18,7 +18,7 @@ function messageAPI_insert_Message($mesg,$sender_id,$receiver_id,$date){
     
         $query = sprintf(
             "INSERT INTO `message` (`mesg`,`sender_id`,`receiver_id`,`date`)
-      VALUE ('%s',%d,%d)",
+      VALUE ('%s',%d,%d,'%s')",
             $n_mesg,
             $n_sender_id,
             $n_receiver_id
@@ -56,7 +56,7 @@ function messageAPI_insert_new_Message($mesg,$sender_id,$receiver_id,$date){
     
         $query = sprintf(
             "INSERT INTO `new_message` (`mesg`,`sender_id`,`receiver_id`,`date`)
-      VALUE ('%s',%d,%d)",
+      VALUE ('%s',%d,%d,'%s')",
             $n_mesg,
             $n_sender_id,
             $n_receiver_id,
