@@ -64,6 +64,8 @@ $(document).ready(function () {
                                         $(this).val("");
                                     }
                                 });
+                                $("#" + textarea_id).setInterval(checkMessage($(this),sender_id,receiver_id),500);
+
                             }
 
                         });
@@ -71,6 +73,32 @@ $(document).ready(function () {
                             $.fn.sendMessage = function(textarea_id,mesg,sender_id,receiver_id) {
                                 $.post('./controller/insert_Message.php', {
                                     mesg:mesg,
+                                    sender_id:sender_id,
+                                    receiver_id:receiver_id
+                                },
+                                function (data) {
+                                 if(data != 'null'){
+                                     var message = JSON.parse(data);
+                                     textarea_id.parent().parent().children(".chat-body").append("");
+                                     for(var i = 0;i<message.length;i++){
+                                         if(message[i].sender_id == sender_id){
+                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_left'><span class='message_left'>"+message[i].mesg+"</span></div>");
+                                         }else{
+                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_right'><span class='message_right'>"+message[i].mesg+"</span></div>");
+                                         }
+                                        
+                                     }
+                                 }
+                    
+                                });
+
+                               return this;
+                            }; 
+                         })( jQuery );
+
+                         (function( $ ){
+                            $.fn.checkMessage = function(textarea_id,sender_id,receiver_id) {
+                                $.get('./controller/check_Message.php', {
                                     sender_id:sender_id,
                                     receiver_id:receiver_id
                                 },
@@ -92,7 +120,6 @@ $(document).ready(function () {
                                return this;
                             }; 
                          })( jQuery );
-
 
 
 
