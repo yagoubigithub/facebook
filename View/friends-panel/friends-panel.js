@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $.ajaxSetup({
+        cache: false
+    });
     var uid = 0;
     $.get('./controller/select_id.php',
         function (data) {
@@ -43,14 +46,14 @@ $(document).ready(function () {
                                     '<div class="chat-body"  id="chat_body_' + $(this).children('.chatbox_id').val() + '">' +
                                     '</div>' +
                                     '<div class="chat-footer" id="chat_footer_' + $(this).children('.chatbox_id').val() + '">' +
-                                    '<textarea  cols="30"  rows="2" id="' + $(this).children('.chatbox_id').val() + '_textarea">'+
+                                    '<textarea  cols="30"  rows="2" id="' + $(this).children('.chatbox_id').val() + '_textarea">' +
                                     '</textarea>' +
                                     ' <input type="hidden" value="' + $(this).children('.id').val() + '">' +
                                     '</div>' +
 
                                     '</div>');
                                 chatbox_count++;
-                                var textarea_id=$(this).children('.chatbox_id').val() + "_textarea";
+                                var textarea_id = $(this).children('.chatbox_id').val() + "_textarea";
                                 var receiver_id = $(this).children('.id').val();
                                 var sender_id = uid;
 
@@ -59,67 +62,80 @@ $(document).ready(function () {
                                     //send message
 
                                     var code = e.keyCode || e.which;
-                                    if(code == 13) { //Enter keycode
-                                        $(this).sendMessage($(this),$(this).val(),sender_id,receiver_id);
+                                    if (code == 13) { //Enter keycode
+                                        $(this).sendMessage($(this), $(this).val(), sender_id, receiver_id);
                                         $(this).val("");
                                     }
                                 });
-                                $("#" + textarea_id).setInterval(checkMessage($(this),sender_id,receiver_id),500);
+                                $.ajaxSetup({
+                                    cache: false
+                                });
+                                var interval = setInterval(function () {
+                                    $.get('./controller/select_message.php', {
+                                            sender_id: sender_id,
+                                            receiver_id: receiver_id
+                                        },
+                                        function (data) {
+                                            if (data != 'null') {
+                                                var message = JSON.parse(data);
+                                                $("#" + textarea_id).parent().parent().children(".chat-body").html("<br>");
+                                                for (var i = 0; i < message.length; i++) {
+                                                    if (message[i].sender_id == sender_id) {
+                                                        $("#" + textarea_id).parent().parent().children(".chat-body").append("<br><div class='message_container m_left'><span class='message_left'>" + message[i].mesg + "</span></div>");
+                                                    } else {
+                                                        $("#" + textarea_id).parent().parent().children(".chat-body").append("<br><div class='message_container m_right'><span class='message_right'>" + message[i].mesg + "</span></div>");
+                                                    }
+
+                                                }
+                                                $("#" + textarea_id).parent().parent().children(".chat-body").animate({
+                                                    scrollTop: message.length * 100 }, 50);
+                                            }
+
+                                        });
+                                }, 2000);
 
                             }
 
                         });
-                        (function( $ ){
-                            $.fn.sendMessage = function(textarea_id,mesg,sender_id,receiver_id) {
+                        (function ($) {
+                            $.fn.sendMessage = function (textarea_id, mesg, sender_id, receiver_id) {
                                 $.post('./controller/insert_Message.php', {
-                                    mesg:mesg,
-                                    sender_id:sender_id,
-                                    receiver_id:receiver_id
-                                },
-                                function (data) {
-                                 if(data != 'null'){
-                                     var message = JSON.parse(data);
-                                     textarea_id.parent().parent().children(".chat-body").append("");
-                                     for(var i = 0;i<message.length;i++){
-                                         if(message[i].sender_id == sender_id){
-                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_left'><span class='message_left'>"+message[i].mesg+"</span></div>");
-                                         }else{
-                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_right'><span class='message_right'>"+message[i].mesg+"</span></div>");
-                                         }
-                                        
-                                     }
-                                 }
-                    
-                                });
+                                        mesg: mesg,
+                                        sender_id: sender_id,
+                                        receiver_id: receiver_id
+                                    },
+                                    function (data) {
+                                        if (data != 'null') {
+                                            var message = JSON.parse(data);
+                                            textarea_id.parent().parent().children(".chat-body").html('');
+                                            for (var i = 0; i < message.length; i++) {
+                                                if (message[i].sender_id == sender_id) {
+                                                    textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_left'><span class='message_left'>" + message[i].mesg + "</span></div>");
+                                                } else {
+                                                    textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_right'><span class='message_right'>" + message[i].mesg + "</span></div>");
+                                                }
 
-                               return this;
-                            }; 
-                         })( jQuery );
+                                            }
+                                            
+                                            
+                                            $("#" + textarea_id).parent().parent().children(".chat-body").animate({
+                                                scrollTop: message.length * 100 }, 50);
+                                       
+                                            }
 
-                         (function( $ ){
-                            $.fn.checkMessage = function(textarea_id,sender_id,receiver_id) {
-                                $.get('./controller/check_Message.php', {
-                                    sender_id:sender_id,
-                                    receiver_id:receiver_id
-                                },
-                                function (data) {
-                                 if(data != 'null'){
-                                     var message = JSON.parse(data);
-                                     for(var i = 0;i<message.length;i++){
-                                         if(message[i].sender_id == sender_id){
-                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_left'><span class='message_left'>"+message[i].mesg+"</span></div>");
-                                         }else{
-                                            textarea_id.parent().parent().children(".chat-body").append("<br><div class='message_container m_right'><span class='message_right'>"+message[i].mesg+"</span></div>");
-                                         }
-                                        
-                                     }
-                                 }
-                    
-                                });
+                                    });
 
-                               return this;
-                            }; 
-                         })( jQuery );
+                                return this;
+                            };
+                        })(jQuery);
+
+                        (function ($) {
+                            $.fn.checkMessage = function (textarea_id, sender_id, receiver_id) {
+
+
+                                return this;
+                            };
+                        })(jQuery);
 
 
 

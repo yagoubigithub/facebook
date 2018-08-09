@@ -175,6 +175,7 @@
 
     
     <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.form.js"></script>
     <script src="./View/home/home.js"></script>
     <script src="View/friends-panel/friends-panel.js"></script> 
     <script src="View/chatbox/chatbox.js"></script>            
