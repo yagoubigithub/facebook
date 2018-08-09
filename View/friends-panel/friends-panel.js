@@ -46,12 +46,17 @@ $(document).ready(function () {
                                     '<div class="chat-body"  id="chat_body_' + $(this).children('.chatbox_id').val() + '">' +
                                     '</div>' +
                                     '<div class="chat-footer" id="chat_footer_' + $(this).children('.chatbox_id').val() + '">' +
-                                    '<textarea  cols="30"  rows="2" id="' + $(this).children('.chatbox_id').val() + '_textarea">' +
+                                    '<textarea  class="textarea_chatbox" placeholder="Type a message" id="' + $(this).children('.chatbox_id').val() + '_textarea">' +
                                     '</textarea>' +
                                     ' <input type="hidden" value="' + $(this).children('.id').val() + '">' +
                                     '</div>' +
 
                                     '</div>');
+                                    $("#chat_header_" + $(this).children('.chatbox_id').val() ).click(function () {
+
+                                        $('#chat_body_'+ $(this).children('.chatbox_id').val() ).toggle();
+                                        $('#chat_footer_'+ $(this).children('.chatbox_id').val() ).toggle();
+                                    });
                                 chatbox_count++;
                                 var textarea_id = $(this).children('.chatbox_id').val() + "_textarea";
                                 var receiver_id = $(this).children('.id').val();
@@ -66,6 +71,7 @@ $(document).ready(function () {
                                         $(this).sendMessage($(this), $(this).val(), sender_id, receiver_id);
                                         $(this).val("");
                                     }
+                                   
                                 });
                                 $.ajaxSetup({
                                     cache: false
