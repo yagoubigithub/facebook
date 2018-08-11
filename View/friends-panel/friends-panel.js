@@ -90,7 +90,8 @@ $(document).ready(function () {
                                     cache: false
                                 });
                                 var interval = setInterval(function () {
-                                    $.get('./controller/select_message.php', {
+                                    if($("#chat_container_" + chatbox_id).length > 0){
+                                        $.get('./controller/select_message.php', {
                                             sender_id: sender_id,
                                             receiver_id: receiver_id
                                         },
@@ -112,6 +113,8 @@ $(document).ready(function () {
                                             }
 
                                         });
+                                    }
+                                    
                                 }, 2000);
 
                             }

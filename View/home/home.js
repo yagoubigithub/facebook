@@ -55,14 +55,10 @@ $(document).ready(function () {
 
 /***************Function********************************** */
 function hideChatContainer(elemnt,chatbox_id) {
-    elemnt.parentElement.parentElement.style.display = 'none';
+    elemnt.parentElement.parentElement.remove();
     chatbox_count--;
     delete chatbox_id_array[chatbox_id_array.indexOf(chatbox_id)];
 
+
 }
 
-function toggleChatbodyAndChatFooter(elemnt) {
-
-    elemnt.parentElement.getElementsByTagName('div')[1].style.display = 'none';
-    elemnt.parentElement.getElementsByTagName('div')[2].style.display = 'none';
-}
