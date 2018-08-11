@@ -50,29 +50,42 @@ $(document).ready(function () {
                                     '</textarea>' +
                                     ' <input type="hidden" value="' + $(this).children('.id').val() + '">' +
                                     '</div>' +
-
                                     '</div>');
-                                    $("#chat_header_" + $(this).children('.chatbox_id').val() ).click(function () {
 
-                                        $('#chat_body_'+ $(this).children('.chatbox_id').val() ).toggle();
-                                        $('#chat_footer_'+ $(this).children('.chatbox_id').val() ).toggle();
-                                    });
+
+                                $("#chat_header_" + $(this).children('.chatbox_id').val()).click(function () {
+                                    $('#chat_body_' + $(this).children('.chatbox_id').val()).toggle();
+                                    $('#chat_footer_' + $(this).children('.chatbox_id').val()).toggle();
+                                });
+
                                 chatbox_count++;
                                 var textarea_id = $(this).children('.chatbox_id').val() + "_textarea";
                                 var receiver_id = $(this).children('.id').val();
                                 var sender_id = uid;
 
                                 chatbox_id_array[chatbox_count] = $(this).children('.chatbox_id').val();
-                                $("#" + textarea_id).keypress(function (e) {
+                                $("#" + textarea_id).keyup(function (e) {
                                     //send message
 
                                     var code = e.keyCode || e.which;
                                     if (code == 13) { //Enter keycode
                                         $(this).sendMessage($(this), $(this).val(), sender_id, receiver_id);
-                                        $(this).val("");
+                                        $(this).val('');
+                                        $("#" + textarea_id).parent().parent().children(".chat-body").animate({
+                                            scrollTop: $("#" + textarea_id).parent().parent().children(".chat-body")[0].scrollHeight
+                                        }, 50);
                                     }
-                                   
+
                                 });
+
+                                /************************************************************* */
+                                var chatbox_id=$(this).children('.chatbox_id').val();
+                                $("#chat_header_" + $(this).children('.chatbox_id').val()).click(function () {
+                                    $("#chat_footer_"+chatbox_id).toggle();
+                                    $("#chat_body_"+chatbox_id).toggle();
+                                });
+                                /******************************************************************** */
+
                                 $.ajaxSetup({
                                     cache: false
                                 });
@@ -94,7 +107,8 @@ $(document).ready(function () {
 
                                                 }
                                                 $("#" + textarea_id).parent().parent().children(".chat-body").animate({
-                                                    scrollTop: message.length * 100 }, 50);
+                                                    scrollTop: $("#" + textarea_id).parent().parent().children(".chat-body")[0].scrollHeight
+                                                }, 50);
                                             }
 
                                         });
@@ -122,28 +136,17 @@ $(document).ready(function () {
                                                 }
 
                                             }
-                                            
-                                            
-                                            $("#" + textarea_id).parent().parent().children(".chat-body").animate({
-                                                scrollTop: message.length * 100 }, 50);
-                                       
-                                            }
+
+
+                                           
+
+                                        }
 
                                     });
 
                                 return this;
                             };
                         })(jQuery);
-
-                        (function ($) {
-                            $.fn.checkMessage = function (textarea_id, sender_id, receiver_id) {
-
-
-                                return this;
-                            };
-                        })(jQuery);
-
-
 
                     });
             }

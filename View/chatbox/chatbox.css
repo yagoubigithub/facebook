@@ -1,14 +1,13 @@
 .fixed-4{
     bottom: 0;
-    border:1px solid red;
     right: 210px;
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .chat-container{
-    width: 250px;
+    max-width: 250px;
     background: white;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     border-top-left-radius: 4px;
@@ -28,6 +27,8 @@
     justify-content: space-between;
     box-sizing: border-box;
     padding: 5px;
+    min-width: 250px;
+    max-width: 250px;
 }
 .chat-header a{
     color: #fff;
@@ -35,7 +36,7 @@
 .chat-body{
     height: 200px;
     box-sizing: border-box;
-    max-width: 100%;
+    min-width: 250px;
     overflow-y: auto;
 }
 .chat-footer{
