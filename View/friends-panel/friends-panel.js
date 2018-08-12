@@ -71,9 +71,7 @@ $(document).ready(function () {
                                     if (code == 13) { //Enter keycode
                                         $(this).sendMessage($(this), $(this).val(), sender_id, receiver_id);
                                         $(this).val('');
-                                        $("#" + textarea_id).parent().parent().children(".chat-body").animate({
-                                            scrollTop: $("#" + textarea_id).parent().parent().children(".chat-body")[0].scrollHeight
-                                        }, 50);
+                                       
                                     }
 
                                 });
@@ -107,9 +105,7 @@ $(document).ready(function () {
                                                     }
 
                                                 }
-                                                $("#" + textarea_id).parent().parent().children(".chat-body").animate({
-                                                    scrollTop: $("#" + textarea_id).parent().parent().children(".chat-body")[0].scrollHeight
-                                                }, 50);
+                                                
                                             }
 
                                         });
@@ -139,6 +135,9 @@ $(document).ready(function () {
                                                 }
 
                                             }
+                                            textarea_id.parent().parent().children(".chat-body").animate({
+                                                scrollTop: textarea_id.parent().parent().children(".chat-body")[0].scrollHeight
+                                            }, 50);
 
 
                                            

@@ -115,7 +115,7 @@ function messageAPI_select_all_messages($sender_id,$receiver_id){
     
         $query = sprintf("SELECT *  FROM `message` WHERE (sender_id = %d AND receiver_id = %d ) OR
         (sender_id = %d AND receiver_id = %d)", $n_sender_id,$n_receiver_id,$n_receiver_id,$n_sender_id);
-        error_log($query);
+        
         $query_result = mysqli_query($facebook_handle, $query);
     
         if (!$query_result)
@@ -138,4 +138,27 @@ function messageAPI_select_all_messages($sender_id,$receiver_id){
     }
    
 }
+/********Test if senderid and reciever id exist in new_message******************************************************* */
+function messageAPI_if_is_a_new_message($sender_id,$receiver_id){
+    try{
+        global $facebook_handle;
+        $n_sender_id = (int)$sender_id;
+        $n_receiver_id = (int)$receiver_id;
+        $query = sprintf("SELECT *  FROM `message` WHERE (sender_id = %d AND receiver_id = %d ) OR
+        (sender_id = %d AND receiver_id = %d)", $n_sender_id,$n_receiver_id,$n_receiver_id,$n_sender_id);
+        
+        $query_result = mysqli_query($facebook_handle, $query);
+    
+        if (!$query_result)
+            return false;
+            if($query_result->num_rows > 0 ){
+                return true;
+            }
+
+    }catch(Exepetion $ex){
+        error_log($ex->getMessage());
+        return false;
+    }
+}
+
 ?>
