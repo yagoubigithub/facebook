@@ -62,7 +62,13 @@ $(document).ready(function () {
                                 var textarea_id = $(this).children('.chatbox_id').val() + "_textarea";
                                 var receiver_id = $(this).children('.id').val();
                                 var sender_id = uid;
-                                $(this).selectMessages(textarea_id,sender_id,receiver_id);
+                                $.when(  $(this).selectMessages(textarea_id,sender_id,receiver_id) ).done(function() {
+                                   
+                                    $("#" + textarea_id).parent().parent().children(".chat-body").animate({
+                                        scrollTop: 2147483647
+                                    }, 150);
+                                  });
+                               
                                 
                                
                                 chatbox_id_array[chatbox_count] = $(this).children('.chatbox_id').val();
@@ -138,7 +144,7 @@ $(document).ready(function () {
 
                                             }
                                             textarea_id.parent().parent().children(".chat-body").animate({
-                                                scrollTop: textarea_id.parent().parent().children(".chat-body")[0].scrollHeight
+                                                scrollTop:2147483647
                                             }, 50);
 
 
