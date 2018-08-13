@@ -11,84 +11,8 @@ body {
     display: block;
 }
 
-.header {
-    position: fixed;
-    width: 100%;
-    height: 43px;
-    color: white;
-    background-color: black;
-    z-index: 99;
-}
 
-.flex-container {
-    display: flex;
-    height: 43px;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
-input.serch {
-    height: 23px;
-    width: 400px;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    padding-right: 0;
-    float: left;
-    padding-left: 5px;
-}
-
-.flex-item {
-    margin-left: 15px;
-}
-
-.btn-serch {
-    margin: 0;
-    border: 0;
-    outline: 0;
-    height: 23px;
-    float: left;
-    color: #4b4f56;
-    background: #f6f7f9;
-    cursor: pointer;
-    border-radius: 0 2px 2px 0;
-    padding: 0 16px;
-    text-align: center;
-}
-
-.logo {
-    float: left;
-    height: 23px;
-    font-size: 21px;
-    margin-right: 15px;
-    color: white;
-}
-
-.img-nav-profile {
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-}
-
-.btn-nav {
-    position: relative;
-    font-size: 12px;
-    -webkit-font-smoothing: antialiased;
-    font-weight: bold;
-    cursor: pointer;
-    height: 27px;
-    line-height: 28px;
-    padding: 7px 10px;
-    text-decoration: none;
-    vertical-align: top;
-}
-
-.btn-nav:hover {
-    background-color: #100909;
-    color: #4b4f56;
-}
 
 .text-white {
     color: white;
