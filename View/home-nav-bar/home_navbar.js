@@ -9,12 +9,11 @@ $(document).ready(function(){
               
             $.get('./controller/select_number_new_message.php', {
                
-                receiver_id: uid
+                uid: uid
             },
             function (data) {
-                if (data != 'null') {
-                    var number_of_message = JSON.parse(data);
-
+                if (data != '0') {
+                    $("#new_messgae_badge").html(data);
                 }
                 
 

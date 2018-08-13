@@ -75,3 +75,9 @@ input.serch {
     background-color: #100909;
     color: #4b4f56;
 }
+.nav_badge{
+    background-color: red;
+    color:white;
+    border-radius: 100%;
+    padding: 3px;
+}
