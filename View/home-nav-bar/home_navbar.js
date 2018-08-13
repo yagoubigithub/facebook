@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $(".dropdown-content").hide();
     $.get('./controller/select_id.php',
     function (data) {
         if (data === "null") {

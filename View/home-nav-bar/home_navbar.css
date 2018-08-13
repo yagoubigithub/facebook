@@ -76,8 +76,32 @@ input.serch {
     color: #4b4f56;
 }
 .nav_badge{
-    background-color: red;
     color:white;
     border-radius: 100%;
     padding: 3px;
+}
+.dropdown-menu{
+    display: block;
+    min-width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+}
+.dropdown-menu a{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none !important;
+}
+.dropdown-menu a:hover{
+    background-color: #f2f2f2;
 }

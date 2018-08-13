@@ -100,23 +100,24 @@
                         </div>
                     </div>
                 </a>
-              <a href="#" class="btn-nav text-gray" id="btn_nav_log_out_card">
+              <span  class="btn-nav text-gray" id="btn_nav_log_out_card">
                     <i class="fas fa-caret-down fa-lg"></i>
                     <sup></sup>
                     <div class="collapse" id="collapse_log_out_card">
-                        <div class="card">
+                        <div class="card" style="padding:0;">
 
-                            <div class="card-body">
-                                <h1>hello collapse</h1>
-                                <h1>hello collapse</h1>
-                                <h1>hello collapse</h1>
-                                <h1>hello collapse</h1>
-                                <h1>hello collapse</h1>
-                                <h1>hello collapse</h1>
+                            <div class="card-body" style="padding:0;">
+                                <div class="dropdown-menu">
+                                   <a href="./">Logout</a>
+                                    <a href="./">Logout  2</a>
+                                    <a href="./">Logout  2</a>
+                                    <a href="./">Logout  2</a>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </a>
+</span>
             </div>
 
         </div>

@@ -23,13 +23,13 @@ body {
 }
 
 .collapse {
-    display: block;
     position: absolute;
-    background-color: transparent;
     width: 200px;
     top: 30px;
-    right: 0;
+    right: -50px;
     display: none;
+    box-sizing: border-box;
+
 }
 
 .fixed {
