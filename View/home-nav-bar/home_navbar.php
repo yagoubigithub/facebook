@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="View/home-nav-bar/home_navbar.css">
 <div class="header">
         <div class="flex-container">
             <div class="flex-item" style="margin-right: 10%">
@@ -47,7 +48,7 @@
                 </a>
                 <a href="#" class="btn-nav text-gray" id="btn_nav_messenger">
                     <i class="fab fa-facebook-messenger fa-lg"></i>
-                    <sup>7</sup>
+                    <sup id="new_messgae_badge">7</sup>
                     <div class="collapse" id="collapse_messenger">
                         <div class="card">
 
@@ -121,3 +122,4 @@
         </div>
 
     </div>
+    <script src="View/home-nav-bar/home_navbar.js"></script>
