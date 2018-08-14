@@ -89,8 +89,8 @@ function messageAPI_delete_the_new_Message($sender_id,$receiver_id){
     
         $query = sprintf(
             "DELETE FROM `new_message` WHERE `sender_id`=%d  AND `receiver_id`=%d",
-            $n_sender_id,
-            $n_receiver_id
+            $n_receiver_id,
+            $n_sender_id
         );
     
         $query_result = mysqli_query($facebook_handle, $query);
