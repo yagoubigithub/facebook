@@ -21,4 +21,15 @@ $(document).ready(function(){
             });
         }
         });
+
+        $("#logout_btn").click(function(){
+            $.get('./controller/logout.php',
+            function (data) {
+                if (data != 'null') {
+                    window.location="/.";
+                }
+                
+
+            });
+        });
 });

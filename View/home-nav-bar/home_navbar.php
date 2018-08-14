@@ -108,7 +108,7 @@
 
                             <div class="card-body" style="padding:0;">
                                 <div class="dropdown-menu">
-                                   <a href="./">Logout</a>
+                                   <a href="#" id="logout_btn">Logout</a>
                                     <a href="./">Logout  2</a>
                                     <a href="./">Logout  2</a>
                                     <a href="./">Logout  2</a>
