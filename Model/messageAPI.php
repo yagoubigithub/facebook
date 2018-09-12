@@ -229,4 +229,37 @@ function messageAPI_select_number_of_new_messages_bysendrId_receiverId($sender_i
    
 }
 
+/*************************************************************************************************** */
+function messageAPI_select_all_new_messages($uid){
+    try{
+        global $facebook_handle;
+       
+        $n_uid = (int)$uid;
+
+        
+    
+        $query = sprintf("SELECT *  FROM `new_message` WHERE receiver_id = %d", $n_uid);
+        
+        $query_result = mysqli_query($facebook_handle, $query);
+    
+        if (!$query_result)
+            return null;
+    
+        $messages = array();
+        
+        if($query_result->num_rows > 0 ){
+            while($row = $query_result->fetch_assoc()) {
+                array_push($messages,$row);
+            }
+           
+            mysqli_free_result($query_result);
+            return $messages;
+        }
+    
+    }catch(Exepetion $ex){
+        error_log($ex->getMessage());
+        return false;
+    }
+   
+}
 ?>

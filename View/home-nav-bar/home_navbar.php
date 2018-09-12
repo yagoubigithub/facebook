@@ -48,11 +48,11 @@
                 </a>
                 <a href="#" class="btn-nav text-gray" id="btn_nav_messenger">
                     <i class="fab fa-facebook-messenger fa-lg"></i>
-                    <sup id="new_messgae_badge" class="nav_badge">7</sup>
+                    <sup id="new_messgae_badge"></sup>
                     <div class="collapse" id="collapse_messenger">
                         <div class="card">
 
-                            <div class="card-body">
+                            <div class="card-body" id="new_message_card">
                                 <h1>hello collapse</h1>
                                 <h1>hello collapse</h1>
                                 <h1>hello collapse</h1>
