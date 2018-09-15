@@ -238,7 +238,12 @@ function messageAPI_select_all_new_messages($uid){
 
         
     
-        $query = sprintf("SELECT *  FROM `new_message` WHERE receiver_id = %d", $n_uid);
+        $query = sprintf("SELECT *  FROM `new_message` m 
+        JOIN `users` u
+        ON u.id  = m.sender_id AND m.receiver_id = %d
+        JOIN `images` i
+        ON i.id_user = u.id
+        ", $n_uid);
         
         $query_result = mysqli_query($facebook_handle, $query);
     
